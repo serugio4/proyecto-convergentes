@@ -1,0 +1,51 @@
+<!--
+  Generated template for the RegistroPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Registro</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label stacked>Nombre</ion-label>
+    <ion-input [(ngModel)]="usuarioNuevo.nombre"
+              type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Apellido</ion-label>
+    <ion-input [(ngModel)]="usuarioNuevo.apellido"
+              type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Cedula</ion-label>
+    <ion-input [(ngModel)]="usuarioNuevo.cedula"
+              type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Correo</ion-label>
+    <ion-input [(ngModel)]="email"
+              type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Contraseña</ion-label>
+    <ion-input [(ngModel)]="password"
+              type="password"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked>Fecha De Nacimiento</ion-label>
+    <ion-input [(ngModel)]="usuarioNuevo.fNacimiento"
+              type="date"></ion-input>
+  </ion-item>
+  <br>
+  <button (click)="registrar()"
+          class="btn-outline-primary"
+          ion-button outline color="primary" block>Registrarse</button>
+</ion-content>
