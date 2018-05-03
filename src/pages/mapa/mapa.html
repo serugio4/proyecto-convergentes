@@ -1,17 +1,24 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Contact
+      Mapa
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
-    </ion-item>
-  </ion-list>
+  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+    <agm-marker *ngFor="let parqueadero of parqueaderos | async"
+                [latitude]="parqueadero.lat"
+                [longitude]="parqueadero.lng"
+                iconUrl = "assets/img/mountainbiking-3.png">
+                <agm-info-window>
+                  <strong>{{ parqueadero.nombre | uppercase }}</strong>
+                  <hr>
+                  <p>Bicicletas: {{ parqueadero.bicicletas.length }} <br>
+                     Espacios Disponibles:
+                  </p>
+                </agm-info-window>
+    </agm-marker>
+  </agm-map>
 </ion-content>

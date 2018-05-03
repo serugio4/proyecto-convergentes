@@ -1,11 +1,56 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      Estadisticas
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <ion-card *ngIf="!_fb.usuario">
+    <ion-card-header>
+      Iniciar Sesion
+    </ion-card-header>
 
-</ion-content>
+    <ion-card-content>
+      <br>
+      Por favor iniciar sesion para observar sus viajes realizados.
+    </ion-card-content>
+
+  </ion-card>
+
+    <ion-card *ngIf="cantidadViajes == 0">
+      <ion-card-header>
+        Sin viajes
+      </ion-card-header>
+
+      <ion-card-content>
+        <br>
+        Aun no haz realizado ningun viaje con nosotros. Realiza un viaje y podras ver tus registros aqui!!!
+      </ion-card-content>
+    </ion-card>
+
+
+    <div *ngIf="cantidadViajes > 0">
+      <ion-card *ngFor="let viaje of viajesUsuario">
+        <ion-card-header>
+          <strong> Viaje:</strong>
+          <br>
+          <strong>{{ viaje.parqueaderoOrigen }} -> {{ viaje.parqueaderoDestino }} </strong>
+        </ion-card-header>
+
+        <ion-card-content>
+          <br>
+          <strong>Origen: </strong>{{ viaje.parqueaderoOrigen }}
+          <br>
+          <strong>Destino: </strong>{{ viaje.parqueaderoDestino }}
+          <br>
+          <strong>Hora Prestamo: </strong>{{ viaje.horaPrestamo.seconds*1000 | date:'medium' }}
+          <br>
+          <strong>Hora Devolucion: </strong>{{ viaje.horaDevolucion.seconds*1000 | date:'medium' }}
+          <br>
+          <strong>T. Recorrido: </strong>{{ viaje.horaPrestamo.seconds | pipeDiferencia:viaje.horaDevolucion.seconds  }}
+        </ion-card-content>
+     </ion-card>
+    </div>
+  </ion-content>

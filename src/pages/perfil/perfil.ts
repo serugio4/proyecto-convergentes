@@ -5,6 +5,7 @@ import { LoadingController } from 'ionic-angular';
 import { FirebaseProvider } from '../../providers/firebase/firebase';
 import { AlertController } from 'ionic-angular';
 import { Usuario } from '../../interfaces/modelos';
+import { ToastController } from 'ionic-angular';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class PerfilPage {
   passwd:string;
 
   constructor(public navCtrl: NavController, public loadingCtrl: LoadingController,
-    public _fb:FirebaseProvider, public alertCtrl: AlertController ) {
+    public _fb:FirebaseProvider, public alertCtrl: AlertController, public toastCtrl: ToastController ) {
 
   }
 
@@ -33,7 +34,17 @@ export class PerfilPage {
             }
           )
       }
-    )
+    ).catch(
+      err =>{
+        console.log("Falle")
+        let toast = this.toastCtrl.create({
+          message: err,
+          duration: 3000
+        });
+        toast.present();
+      }
+    );
+
   }
 
   actualizarDatos( usuarioCambios:Usuario ){
@@ -47,6 +58,14 @@ export class PerfilPage {
         alert.present();
       }
     )
+  }
+
+  presentLoading() {
+  let loader = this.loadingCtrl.create({
+    content: "Please wait...",
+    duration: 3000
+  });
+  loader.present();
   }
 
 }

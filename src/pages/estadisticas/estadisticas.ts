@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { Viaje } from '../../interfaces/modelos';
+import { FirebaseProvider } from '../../providers/firebase/firebase';
+import { PipeDiferenciaPipe } from '../../pipes/pipe-diferencia/pipe-diferencia';
+
 
 @Component({
   selector: 'page-about',
@@ -7,8 +11,17 @@ import { NavController } from 'ionic-angular';
 })
 export class EstadisticasPage {
 
-  constructor(public navCtrl: NavController) {
+  cantidadViajes:number = null;
+  viajesUsuario:Viaje[];
 
+  constructor(public navCtrl: NavController, private _fb:FirebaseProvider) {
+    if(this._fb.usuario){
+      this._fb.usuarioCollection.doc( this._fb.usuario.id  ).collection<Viaje>('viajes')
+        .valueChanges().subscribe( docs =>{
+            this.cantidadViajes = docs.length;
+            this.viajesUsuario = docs;
+        } );
+    }
   }
 
 }

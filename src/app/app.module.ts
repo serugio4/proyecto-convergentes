@@ -8,7 +8,9 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
+import { AgmCoreModule } from '@agm/core';
 
+import { PipeDiferenciaPipe } from '../pipes/pipe-diferencia/pipe-diferencia';
 
 import { MapaPage } from '../pages/mapa/mapa';
 import { EstadisticasPage } from '../pages/estadisticas/estadisticas'
@@ -23,6 +25,7 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
 @NgModule({
   declarations: [
     MyApp,
+    PipeDiferenciaPipe,
     MapaPage,
     EstadisticasPage,
     PerfilPage,
@@ -35,6 +38,9 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
     AngularFireModule.initializeApp(environment.firebase), // imports firebase/app needed for everything
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBLNUZ79p5RUKzuKDAI_QUU2CjZb9H7jGw'
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
