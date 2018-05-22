@@ -4,7 +4,7 @@ import { Usuario } from '../../interfaces/modelos';
 import { FirebaseProvider } from '../../providers/firebase/firebase';
 import { ToastController } from 'ionic-angular';
 
-/**
+/**    
  * Generated class for the RegistroPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on

@@ -11,3 +11,4 @@ import { RegistroPage } from './registro';
   ],
 })
 export class RegistroPageModule {}
+    

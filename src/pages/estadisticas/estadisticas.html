@@ -19,7 +19,7 @@
     </ion-card-header>
 
     <ion-card-content>
-      <br>
+      <br >
       Por favor iniciar sesion para observar sus viajes realizados.
     </ion-card-content>
 
@@ -47,15 +47,15 @@
 
         <ion-card-content>
           <br>
-          <strong>Origen: </strong>{{ viaje.parqueaderoOrigen }}
+          <strong>Origen:  </strong>{{ viaje.parqueaderoOrigen }}
           <br>
-          <strong>Destino: </strong>{{ viaje.parqueaderoDestino }}
+          <strong>Destino:  </strong>{{ viaje.parqueaderoDestino }}
           <br>
-          <strong>Hora Prestamo: </strong>{{ viaje.horaPrestamo.seconds*1000 | date:'medium' }}
+          <strong>Hora Prestamo:  </strong>{{ viaje.horaPrestamo.seconds*1000 | date:'medium' }}
           <br>
-          <strong>Hora Devolucion: </strong>{{ viaje.horaDevolucion.seconds*1000 | date:'medium' }}
+          <strong>Hora Devolucion:  </strong>{{ viaje.horaDevolucion.seconds*1000 | date:'medium' }}
           <br>
-          <strong>T. Recorrido: </strong>{{ viaje.horaPrestamo.seconds | pipeDiferencia:viaje.horaDevolucion.seconds  }}
+          <strong>T. Recorrido:  </strong>{{ viaje.horaPrestamo.seconds | pipeDiferencia:viaje.horaDevolucion.seconds  }}
         </ion-card-content>
      </ion-card>
     </div>

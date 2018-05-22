@@ -5,7 +5,7 @@ import { FirebaseProvider } from '../../providers/firebase/firebase';
 import { PopoverController } from 'ionic-angular';
 import { PopoverPage } from '../popover/popover';
 
-
+   
 @Component({
   selector: 'page-about',
   templateUrl: 'estadisticas.html'
