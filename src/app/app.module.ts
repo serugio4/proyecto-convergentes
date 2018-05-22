@@ -16,6 +16,7 @@ import { MapaPage } from '../pages/mapa/mapa';
 import { EstadisticasPage } from '../pages/estadisticas/estadisticas'
 import { PerfilPage } from '../pages/perfil/perfil';
 import { RegistroPage } from '../pages/registro/registro';
+import { PopoverPage } from '../pages/popover/popover';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -30,6 +31,7 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
     EstadisticasPage,
     PerfilPage,
     RegistroPage,
+    PopoverPage,
     TabsPage
   ],
   imports: [
@@ -49,6 +51,7 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
     EstadisticasPage,
     PerfilPage,
     RegistroPage,
+    PopoverPage,
     TabsPage
   ],
   providers: [

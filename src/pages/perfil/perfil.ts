@@ -6,6 +6,9 @@ import { FirebaseProvider } from '../../providers/firebase/firebase';
 import { AlertController } from 'ionic-angular';
 import { Usuario } from '../../interfaces/modelos';
 import { ToastController } from 'ionic-angular';
+import { PopoverController } from 'ionic-angular';
+import { PopoverPage } from '../popover/popover';
+
 
 
 @Component({
@@ -19,7 +22,8 @@ export class PerfilPage {
   passwd:string;
 
   constructor(public navCtrl: NavController, public loadingCtrl: LoadingController,
-    public _fb:FirebaseProvider, public alertCtrl: AlertController, public toastCtrl: ToastController ) {
+    public _fb:FirebaseProvider, public alertCtrl: AlertController, public toastCtrl: ToastController,
+      private popoverCtrl:PopoverController) {
 
   }
 
@@ -67,5 +71,10 @@ export class PerfilPage {
   });
   loader.present();
   }
+
+  presentPopover() {
+    let popover = this.popoverCtrl.create(PopoverPage);
+    popover.present();
+}
 
 }

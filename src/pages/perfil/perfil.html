@@ -1,7 +1,15 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Perfil</ion-title>
-  </ion-navbar>
+  <ion-toolbar>
+    <ion-title>
+      Perfil
+    </ion-title>
+    <ion-buttons end>
+      <button (click)="presentPopover()"
+      ion-button icon-only>
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding *ngIf="!_fb.usuario">

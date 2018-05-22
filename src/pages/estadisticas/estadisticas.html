@@ -1,12 +1,18 @@
 <ion-header>
-  <ion-navbar>
+  <ion-toolbar>
     <ion-title>
       Estadisticas
     </ion-title>
-  </ion-navbar>
+    <ion-buttons end>
+      <button (click)="presentPopover()"
+      ion-button icon-only>
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="popover-page">
   <ion-card *ngIf="!_fb.usuario">
     <ion-card-header>
       Iniciar Sesion

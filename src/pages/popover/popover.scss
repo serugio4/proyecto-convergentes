@@ -1,0 +1,19 @@
+page-popover {
+
+}
+
+::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.popover-page {
+  .text-to-change div {
+    margin: 10px auto;
+  }
+
+  ion-row,
+  ion-col {
+    padding: 0;
+  }
+}

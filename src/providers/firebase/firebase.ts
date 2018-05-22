@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { Usuario, Parqueadero, Bicicleta } from '../../interfaces/modelos';
+import { Usuario, Parqueadero } from '../../interfaces/modelos';
 
 /*
   Generated class for the FirebaseProvider provider.
@@ -33,7 +33,7 @@ export class FirebaseProvider {
     logout():void{
       this.fauth.auth.signOut().then(
         resp => {
-          localStorage.removeItem('usuario');
+          this.usuario = null
         }
       );
     }
